@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('scm') {
             steps {
-        git branch: 'master', url: 'https://github.com/Safrinakbar/dev.git'
+        git branch: 'master', url: 'https://github.com/reshmacsr161/devopsss.git'
             }
         }
         stage('build') {
@@ -16,7 +16,7 @@ pipeline {
 stage('build to images') {
             steps {
                script{
-                  shell 'docker build -t safrinbaragna/simplewebapp .'
+                  shell 'docker build -t reshmamuthusam/simplewebapp .'
                }
     }
 }
@@ -24,7 +24,7 @@ stage('push to hub') {
             steps {
                script{
                  withDockerRegistry(credentialsId: 'Docker_cred', url: 'https://index.docker.io/v1/') {
-                  shell 'docker push safrinbaragna/simplewebapp'
+                  shell 'docker push reshmamuthusam/simplewebapp'
                }
             }
             }
